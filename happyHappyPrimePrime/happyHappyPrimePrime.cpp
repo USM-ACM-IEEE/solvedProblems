@@ -6,6 +6,7 @@ using namespace std;
 
 
 bool isHappy(int num)
+//Determines if a given number is happy
 {
      //will irerate num to one digit
      int sum =0; //sum of squares of digits
@@ -13,11 +14,13 @@ bool isHappy(int num)
      while(true)
      {
        while(num>0)
+        //While there are still digits
        {
         sum += (num%10) * (num%10); 
         num /= 10;
        }
        if(sum<10) return (sum==1);
+       //If the sum has fallen bellow ten return if it is happy or not
         
         num = sum;    
         sum =0;
@@ -25,6 +28,7 @@ bool isHappy(int num)
 }
 
 void primes(bool isPrime[]) // p size is 10,001
+//uses teh sieve method to find the primes in the range
 {
      //initialize
      isPrime[0]=isPrime[1]=false; 
@@ -42,12 +46,15 @@ void primes(bool isPrime[]) // p size is 10,001
      
      
 int small(int num)
+//This will run one round of the happiness algorithm discribed in the problem
 {
     int sum=0;
        while(num>0)
        {
-        sum += (num%10) * (num%10); 
+        sum += (num%10) * (num%10);
+        //This adds the square of the first digit
         num /= 10;
+        //Takes the digit that was just added off
        }   
     return sum;
 }
@@ -77,6 +84,8 @@ int main(int argc, char *argv[])
    {
             cin >> trash >> num; 
             smallNum = small(num);
+            //Runs the algorithm once to ensure the number is within our range of generated happy numbers
+            
             yes = isPrime[num] && happy[smallNum]; 
             cout << trash << " " << num << " " ; 
             if(yes) cout <<"YES\n";
