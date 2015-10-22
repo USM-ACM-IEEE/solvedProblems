@@ -1,0 +1,178 @@
+div.illustration {
+  float: right;
+  padding-left: 20px; }
+  div.illustration .illustration {
+    width: 100%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px; }
+
+div.figure {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'merriweather', georgia, serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 20px; }
+  div.figure .caption {
+    margin-top: 15px; }
+
+div.description {
+  color: #898992;
+  font-style: italic;
+  font-family: 'merriweather', georgia, serif;
+  font-size: 12px;
+  text-align: right;
+  margin-top: 5px; }
+
+.page-problem .page-content.single {
+  max-width: 900px;
+  margin: 30px auto; }
+
+.page-problem-layout .page-content .problem-headline {
+  margin-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e7e7e8;
+  position: relative; }
+  .page-problem-layout .page-content .problem-headline h1 {
+    text-align: center;
+    font-size: 44px; }
+    .page-problem-layout .page-content .problem-headline h1 > a {
+      color: #2a353a; }
+  .page-problem-layout .page-content .problem-headline .extra-info {
+    text-align: center;
+    margin: 15px 0;
+    opacity: 0.8; }
+    .page-problem-layout .page-content .problem-headline .extra-info span {
+      color: #898992;
+      margin-left: 30px; }
+      .page-problem-layout .page-content .problem-headline .extra-info span:first-child {
+        margin: 0; }
+  .page-problem-layout .page-content .problem-headline .alt-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    margin-top: -38px;
+    height: 42px; }
+    .page-problem-layout .page-content .problem-headline .alt-buttons a {
+      width: 42px;
+      height: 42px;
+      line-height: 41px;
+      font-size: 18px;
+      text-align: center;
+      float: left;
+      padding: 0;
+      margin-right: 20px; }
+      .page-problem-layout .page-content .problem-headline .alt-buttons a > i {
+        margin: 0;
+        padding: 0; }
+.page-problem-layout .page-content .problem-wrapper {
+  padding: 30px 0 0;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 24px; }
+.page-problem-layout .page-content .problembody {
+  font-family: 'merriweather', georgia, serif;
+}
+  .page-problem-layout .page-content .problem-wrapper h1, .page-problem-layout .page-content .problem-wrapper h2, .page-problem-layout .page-content .problem-wrapper h3, .page-problem-layout .page-content .problem-wrapper h4 {
+    font-family: "proxima-nova", "Proxima Nova", 'Open Sans', "Helvetice Neue", sans-serif, arial; }
+  .page-problem-layout .page-content .problem-wrapper h2 {
+    margin-top: 30px; }
+  .page-problem-layout .page-content .problem-wrapper p {
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 24px; }
+  .page-problem-layout .page-content .problem-wrapper .minipage {
+    width: auto !important; }
+.page-problem-layout .page-content .source {
+  margin-top: 20px;
+  border-top: 1px solid #e7e7e8;
+  color: #898992; }
+.page-problem-layout .page-content.boxed .problem-headline {
+  margin-top: 35px; }
+
+
+.table-sample,
+table.sample {
+  margin-top: 20px; }
+  .table-sample > tbody > tr > th,
+  .table-sample > tfoot > tr > th,
+  .table-sample tr > th,
+  table.sample > tbody > tr > th,
+  table.sample > tfoot > tr > th,
+  table.sample tr > th {
+    border-top: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a353a; }
+
+table.sample {
+  width: 100%;
+  margin-bottom: 20px; }
+  table.sample td,
+  table.sample th {
+    padding: 4px;
+    vertical-align: baseline;
+    width: 50%; }
+    table.sample td pre,
+    table.sample th pre {
+      border: 1px solid #b6b6bb;
+      font-family: monospace;
+      padding: 6px 11px;
+      max-width: 410px; }
+  table.sample th {
+    font-family: "proxima-nova", "Proxima Nova", 'Open Sans', "Helvetice Neue", sans-serif, arial; }
+
+.problembody dd p {
+    display: inline;
+}
+
+.description:after {
+    content:'';
+    display:table;
+    clear:both;
+}
+
+div.problembody {
+    text-align: justify;
+}
+
+.problembody dt {
+    float: left;
+    clear: left;
+    margin:0;
+    padding: 7px 7px 0 0;
+}
+.problembody dd {
+    margin: 0 0 0 40px; float: none;
+    padding: 5px 0;
+}
+.problembody ul { padding-left: 40px; }
+.problembody ol { padding-left: 20px; }
+
+.problembody .scshape { font-variant: small-caps; font-size: 1.1em; }
+
+dl.hanging-indent dd {
+    margin-left: 40px;
+}
+
+@media print {
+    table.sample td pre, table.sample th pre {
+        max-width: none;
+    }
+    .problembody dd, .problembody dt {
+        line-height: inherit;
+        padding: 0;
+    }
+    .problembody dd {
+        padding-bottom: 5px;
+    }
+    .problembody dt:after {
+        content: "\00a0";
+    }
+}
+

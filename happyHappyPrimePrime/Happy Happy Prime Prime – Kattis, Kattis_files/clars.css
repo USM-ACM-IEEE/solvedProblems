@@ -1,0 +1,45 @@
+div.queueform {
+	text-align: right;
+}
+
+div.clar_header {
+    padding: 0px;
+    margin-top: 20px;
+    border-spacing: 0px;
+    font-weight: bold;
+}
+
+div.reply_header {
+    font-weight: bold;
+}
+
+.clar_reply {
+    padding: 10px;
+    margin-top: 15px;
+	margin-left: 20px;
+}
+
+#clarbox {
+    text-align: center;
+    border: 2px solid #135;
+    color: red;
+    font-weight: bold;
+}
+
+.clar_question {
+    font-style: italic;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ffffe0;
+    border: 1px solid #F0E68C;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+.clar_reply.new {
+    border: solid black 2px;
+}
+
+.clar_reply.new span.new_alert {
+    color: red;
+}

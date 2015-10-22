@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://open.kattis.com/problems/happyprime -->
+<html lang="en" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happy Happy Prime Prime – Kattis, Kattis</title>
+
+    <script async="" src="./Happy Happy Prime Prime – Kattis, Kattis_files/analytics.js"></script><script src="./Happy Happy Prime Prime – Kattis, Kattis_files/jquery.min.js"></script><style type="text/css"></style>
+    <script src="./Happy Happy Prime Prime – Kattis, Kattis_files/jquery-ui.min.js"></script>
+
+    <!-- Fonts/Icons -->
+    <link href="./Happy Happy Prime Prime – Kattis, Kattis_files/font-awesome.css" rel="stylesheet">
+
+    <link href="./Happy Happy Prime Prime – Kattis, Kattis_files/css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap CSS -->
+    <link href="./Happy Happy Prime Prime – Kattis, Kattis_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Editable and Select2 -->
+    <link href="./Happy Happy Prime Prime – Kattis, Kattis_files/select2.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://open.kattis.com/favicon">
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="./Happy Happy Prime Prime – Kattis, Kattis_files/basic_style.css">
+    <link rel="stylesheet" href="./Happy Happy Prime Prime – Kattis, Kattis_files/custom_style.css">
+    <link rel="stylesheet" href="./Happy Happy Prime Prime – Kattis, Kattis_files/clars.css">
+    <link rel="stylesheet" href="./Happy Happy Prime Prime – Kattis, Kattis_files/problem_style.css">
+    <link rel="stylesheet" href="./Happy Happy Prime Prime – Kattis, Kattis_files/kattis_font.css">
+    <style type="text/css">
+     .header {
+       background-color: rgb(240,176,52);
+     }
+     .header .main-nav > ul > li.current:before {
+       border-bottom-color: rgb(240,176,52);
+     }
+    </style>
+
+    <script type="text/javascript">
+        window.page_loaded_at = new Date();
+        jQuery.noConflict();
+        var $j = jQuery;
+    </script>
+
+    
+
+<script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+        tex2jax: {
+            ignoreClass: ".*",
+            inlineMath: [['$','$'], ['\\(','\\)']]
+        },
+        MMLorHTML: {
+            prefer: { Firefox: "HTML" }
+        }
+    });
+</script>
+
+<script type="text/javascript" src="./Happy Happy Prime Prime – Kattis, Kattis_files/MathJax.js"></script>
+
+
+
+
+        <script>
+  (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26661929-8', 'auto');
+  ga('set', 'forceSSL', true);
+  ga('send', 'pageview');
+
+</script>
+
+    
+
+    
+    <style type="text/css">
+        .header {
+            margin-bottom: 0;
+        }
+
+        .page-content.single {
+            padding: 0;
+        }
+
+        .problem-headline h1 {
+            margin-top: 0;
+        }
+    </style>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?rev=2.5.3') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?rev=2.5.3') format('woff'), url('https://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?rev=2.5.3') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body class="page-problem page-problem-layout"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="wrapper">
+    <header class="header">
+    <div class="background">
+        
+        <div class="wrap">
+            <div class="app-side fl">
+                <a href="https://open.kattis.com/" class="logo logo-open"><img src="./Happy Happy Prime Prime – Kattis, Kattis_files/site-logo" alt=""></a>
+
+                <div class="title-wrapper">
+                    <div class="header-title">Kattis</div>
+                    <nav class="main-nav">
+                        <ul>
+                                                                                            
+                                <li class=""><a href="https://open.kattis.com/problems">Problems</a></li>
+                                                                                            
+                                <li class=""><a href="https://open.kattis.com/contests">Contests</a></li>
+                                                                                            
+                                <li class=""><a href="https://open.kattis.com/ranklist">Ranklists</a></li>
+                                                                                            
+                                <li class=""><a href="https://open.kattis.com/jobs">Jobs</a></li>
+                                                                                            
+                                <li class=""><a href="https://open.kattis.com/help">Help</a></li>
+                            
+                                                                                </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="user-side fr">
+
+                <nav class="user-nav">
+                    <ul class="user-nav-ul">
+                        
+                                                    <li><a class="btn dark-bg menu_login" href="https://open.kattis.com/login">Log in</a></li>
+                                            </ul>
+
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+
+    
+
+    <div class="container">
+
+        
+
+        <div class="page-content single clearfix">
+            <section class="box clearfix main-content">
+                
+                
+
+
+
+
+<div class="problem-wrapper">
+
+    
+    <div class="problem-headline clearfix"><div class="headline-wrapper"><h1>Happy Happy Prime Prime</h1></div><div class="extra-info"><span>Problem ID: happyprime</span><span>Time limit: 1 second</span><span>Memory limit: 1024 MB</span></div><div class="alt-buttons"><a href="https://open.kattis.com/problems/happyprime/statistics" class="btn large teal" data-toggle="tooltip" data-placement="top" title="" data-original-title="Problem statistics"><i class="fa fa-bar-chart-o"></i></a><a href="https://open.kattis.com/problems/happyprime/submit" class="btn large green" data-toggle="tooltip" data-placement="top" title="" data-original-title="Submit"><i class="fa fa-upload"></i></a></div><div class="problem-difficulty"><h4>Difficulty</h4><span>3.7</span></div><div class="problem-button-wrap"><div class="btn-group btn-group-sm"></div></div></div>
+
+            
+  <div class="problembody">
+    <p><b class="bfseries">RILEY VASHTEE</b>: [<i class="itshape">reading from display</i>] Find the next number in the
+    sequence:</p>
+
+    <center>
+      <b class="bfseries">313 331 367 ...? What?</b>
+    </center>
+
+    <p><b class="bfseries">THE DOCTOR: 379.</b></p>
+
+    <p><b class="bfseries">MARTHA JONES:</b> What?</p>
+
+    <p><b class="bfseries">THE DOCTOR:</b> It’s a sequence of happy
+    primes – <b class="bfseries">379</b>.</p>
+
+    <p><b class="bfseries">MARTHA JONES:</b> Happy <i class="itshape">what?</i></p>
+
+    <p><b class="bfseries">THE DOCTOR</b>: Any number that reduces
+    to one when you take the sum of the square of its digits and
+    continue iterating it until it yields <span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame"><nobr><span class="math" id="MathJax-Span-1" role="math" style="width: 0.683em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.513em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.93em 1000em 2.951em -999.997em); top: -2.775em; left: 0.003em;"><span class="mrow" id="MathJax-Span-2"><span class="mn" id="MathJax-Span-3" style="font-family: MathJax_Main;">1</span></span><span style="display: inline-block; width: 0px; height: 2.781em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.004em; vertical-align: -0.068em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-1">1</script></span> is a happy number. Any number that
+    doesn’t, isn’t. A <em>happy</em> prime is both happy and
+    prime.</p>
+
+    <p><b class="bfseries">THE DOCTOR</b>: I dunno, talk about
+    <em>dumbing down</em>. Don’t they teach recreational
+    mathematics anymore?</p>
+
+    <p>Excerpted from “<i class="itshape">Dr. Who</i>,” Episode 42
+    (2007).</p>
+
+    <p>The number 7 is certainly prime. But is it
+    happy?</p><span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><div class="MathJax_Display" style="text-align: center;"><span class="MathJax" id="MathJax-Element-2-Frame"><nobr><span class="math" id="MathJax-Span-4" role="math" style="width: 12.248em; display: inline-block;"><span style="display: inline-block; position: relative; width: 9.697em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(-1.414em 1000em 5.558em -999.997em); top: -2.321em; left: 0.003em;"><span class="mrow" id="MathJax-Span-5"><span class="mtable" id="MathJax-Span-6" style="padding-right: 0.173em; padding-left: 0.173em;"><span style="display: inline-block; position: relative; width: 9.3em; height: 0px;"><span style="position: absolute; clip: rect(3.744em 1000em 10.32em -999.997em); top: -7.253em; left: 0.003em;"><span style="display: inline-block; position: relative; width: 1.477em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -6.687em; right: 0.003em;"><span class="mtd" id="MathJax-Span-7"><span class="mrow" id="MathJax-Span-8"><span class="mn" id="MathJax-Span-9" style="font-family: MathJax_Main;">7</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -5.326em; right: 0.003em;"><span class="mtd" id="MathJax-Span-21"><span class="mrow" id="MathJax-Span-22"><span class="mn" id="MathJax-Span-23" style="font-family: MathJax_Main;">49</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -3.909em; right: 0.003em;"><span class="mtd" id="MathJax-Span-39"><span class="mrow" id="MathJax-Span-40"><span class="mn" id="MathJax-Span-41" style="font-family: MathJax_Main;">97</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -2.548em; right: 0.003em;"><span class="mtd" id="MathJax-Span-57"><span class="mrow" id="MathJax-Span-58"><span class="mn" id="MathJax-Span-59" style="font-family: MathJax_Main;">130</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -1.188em; right: 0.003em;"><span class="mtd" id="MathJax-Span-75"><span class="mrow" id="MathJax-Span-76"><span class="mn" id="MathJax-Span-77" style="font-family: MathJax_Main;">10</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span><span style="display: inline-block; width: 0px; height: 7.259em;"></span></span><span style="position: absolute; clip: rect(3.688em 1000em 10.094em -999.997em); top: -7.027em; left: 1.76em;"><span style="display: inline-block; position: relative; width: 1.307em; height: 0px;"><span style="position: absolute; clip: rect(3.348em 1000em 4.198em -999.997em); top: -6.687em; left: 50%; margin-left: -0.621em;"><span class="mtd" id="MathJax-Span-10"><span class="mrow" id="MathJax-Span-11"><span class="mi" id="MathJax-Span-12"></span><span class="mo" id="MathJax-Span-13" style="font-family: MathJax_Main; padding-left: 0.286em;">→</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(3.348em 1000em 4.198em -999.997em); top: -5.326em; left: 50%; margin-left: -0.621em;"><span class="mtd" id="MathJax-Span-24"><span class="mrow" id="MathJax-Span-25"><span class="mi" id="MathJax-Span-26"></span><span class="mo" id="MathJax-Span-27" style="font-family: MathJax_Main; padding-left: 0.286em;">→</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(3.348em 1000em 4.198em -999.997em); top: -3.909em; left: 50%; margin-left: -0.621em;"><span class="mtd" id="MathJax-Span-42"><span class="mrow" id="MathJax-Span-43"><span class="mi" id="MathJax-Span-44"></span><span class="mo" id="MathJax-Span-45" style="font-family: MathJax_Main; padding-left: 0.286em;">→</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(3.348em 1000em 4.198em -999.997em); top: -2.548em; left: 50%; margin-left: -0.621em;"><span class="mtd" id="MathJax-Span-60"><span class="mrow" id="MathJax-Span-61"><span class="mi" id="MathJax-Span-62"></span><span class="mo" id="MathJax-Span-63" style="font-family: MathJax_Main; padding-left: 0.286em;">→</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(3.348em 1000em 4.198em -999.997em); top: -1.188em; left: 50%; margin-left: -0.621em;"><span class="mtd" id="MathJax-Span-78"><span class="mrow" id="MathJax-Span-79"><span class="mi" id="MathJax-Span-80"></span><span class="mo" id="MathJax-Span-81" style="font-family: MathJax_Main; padding-left: 0.286em;">→</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span><span style="display: inline-block; width: 0px; height: 7.032em;"></span></span><span style="position: absolute; clip: rect(3.744em 1000em 10.604em -999.997em); top: -7.48em; left: 3.348em;"><span style="display: inline-block; position: relative; width: 5.955em; height: 0px;"><span style="position: absolute; clip: rect(2.951em 1000em 4.198em -999.997em); top: -6.687em; left: 0.003em;"><span class="mtd" id="MathJax-Span-14"><span class="mrow" id="MathJax-Span-15"><span class="msubsup" id="MathJax-Span-16"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-17" style="font-family: MathJax_Main;">7</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-18" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-19" style="font-family: MathJax_Main; padding-left: 0.286em;">=</span><span class="mn" id="MathJax-Span-20" style="font-family: MathJax_Main; padding-left: 0.286em;">49</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(2.951em 1000em 4.255em -999.997em); top: -5.326em; left: 0.003em;"><span class="mtd" id="MathJax-Span-28"><span class="mrow" id="MathJax-Span-29"><span class="msubsup" id="MathJax-Span-30"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-31" style="font-family: MathJax_Main;">4</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-32" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-33" style="font-family: MathJax_Main; padding-left: 0.23em;">+</span><span class="msubsup" id="MathJax-Span-34" style="padding-left: 0.23em;"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-35" style="font-family: MathJax_Main;">9</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-36" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-37" style="font-family: MathJax_Main; padding-left: 0.286em;">=</span><span class="mn" id="MathJax-Span-38" style="font-family: MathJax_Main; padding-left: 0.286em;">97</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(2.951em 1000em 4.255em -999.997em); top: -3.909em; left: 0.003em;"><span class="mtd" id="MathJax-Span-46"><span class="mrow" id="MathJax-Span-47"><span class="msubsup" id="MathJax-Span-48"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-49" style="font-family: MathJax_Main;">9</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-50" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-51" style="font-family: MathJax_Main; padding-left: 0.23em;">+</span><span class="msubsup" id="MathJax-Span-52" style="padding-left: 0.23em;"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-53" style="font-family: MathJax_Main;">7</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-54" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-55" style="font-family: MathJax_Main; padding-left: 0.286em;">=</span><span class="mn" id="MathJax-Span-56" style="font-family: MathJax_Main; padding-left: 0.286em;">130</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(2.951em 1000em 4.255em -999.997em); top: -2.548em; left: 0.003em;"><span class="mtd" id="MathJax-Span-64"><span class="mrow" id="MathJax-Span-65"><span class="msubsup" id="MathJax-Span-66"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-67" style="font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-68" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-69" style="font-family: MathJax_Main; padding-left: 0.23em;">+</span><span class="msubsup" id="MathJax-Span-70" style="padding-left: 0.23em;"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-71" style="font-family: MathJax_Main;">3</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-72" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-73" style="font-family: MathJax_Main; padding-left: 0.286em;">=</span><span class="mn" id="MathJax-Span-74" style="font-family: MathJax_Main; padding-left: 0.286em;">10</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; clip: rect(2.951em 1000em 4.255em -999.997em); top: -1.188em; left: 0.003em;"><span class="mtd" id="MathJax-Span-82"><span class="mrow" id="MathJax-Span-83"><span class="msubsup" id="MathJax-Span-84"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-85" style="font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-86" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-87" style="font-family: MathJax_Main; padding-left: 0.23em;">+</span><span class="msubsup" id="MathJax-Span-88" style="padding-left: 0.23em;"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px;"><span style="position: absolute; clip: rect(3.177em 1000em 4.198em -999.997em); top: -4.022em; left: 0.003em;"><span class="mn" id="MathJax-Span-89" style="font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span><span style="position: absolute; top: -4.419em; left: 0.513em;"><span class="mn" id="MathJax-Span-90" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span></span><span class="mo" id="MathJax-Span-91" style="font-family: MathJax_Main; padding-left: 0.286em;">=</span><span class="mn" id="MathJax-Span-92" style="font-family: MathJax_Main; padding-left: 0.286em;">1</span></span></span><span style="display: inline-block; width: 0px; height: 4.028em;"></span></span></span><span style="display: inline-block; width: 0px; height: 7.486em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.327em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 8.504em; vertical-align: -3.925em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-2">\begin{eqnarray*} 7
+    & \rightarrow & 7^2 = 49 \\ 49 & \rightarrow &
+    4^2 + 9^2 = 97 \\ 97 & \rightarrow & 9^2 + 7^2 = 130 \\
+    130 & \rightarrow & 1^2 + 3^2 = 10 \\ 10 &
+    \rightarrow & 1^2 + 0^2 = 1 \\ \end{eqnarray*}</script></span>
+
+    <p>It is happy <tt class="ttfamily">:-)</tt> As it happens, 7
+    is the smallest happy prime. Please note that for the purposes
+    of this problem, 1 is <em>not</em> prime.</p>
+
+    <p>For this problem you will write a program to determine if a
+    number is a happy prime.</p>
+
+    <h2>Input</h2>
+
+    <p>The first line of input contains a single integer
+    <span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-3-Frame"><nobr><span class="math" id="MathJax-Span-93" role="math" style="width: 1.023em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.796em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.704em 1000em 2.724em -999.997em); top: -2.548em; left: 0.003em;"><span class="mrow" id="MathJax-Span-94"><span class="mi" id="MathJax-Span-95" style="font-family: MathJax_Math-italic;">P<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.116em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.554em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.004em; vertical-align: -0.068em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-3">P</script></span>, (<span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-4-Frame"><nobr><span class="math" id="MathJax-Span-96" role="math" style="width: 8.393em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.635em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.93em 1000em 3.064em -999.997em); top: -2.775em; left: 0.003em;"><span class="mrow" id="MathJax-Span-97"><span class="mn" id="MathJax-Span-98" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-99" style="font-family: MathJax_Main; padding-left: 0.286em;">≤</span><span class="mi" id="MathJax-Span-100" style="font-family: MathJax_Math-italic; padding-left: 0.286em;">P<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.116em;"></span></span><span class="mo" id="MathJax-Span-101" style="font-family: MathJax_Main; padding-left: 0.286em;">≤</span><span class="mn" id="MathJax-Span-102" style="font-family: MathJax_Main; padding-left: 0.286em;">10</span><span class="mspace" id="MathJax-Span-103" style="height: 0.003em; vertical-align: 0.003em; width: 0.173em; display: inline-block; overflow: hidden;"></span><span class="mn" id="MathJax-Span-104" style="font-family: MathJax_Main;">000</span></span><span style="display: inline-block; width: 0px; height: 2.781em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.146em; vertical-align: -0.211em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-4">1 \le P \le 10\, 000</script></span>), which is the
+    number of data sets that follow. Each data set should be
+    processed identically and independently.</p>
+
+    <p>Each data set consists of a single line of input. It
+    contains the data set number, <span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-5-Frame"><nobr><span class="math" id="MathJax-Span-105" role="math" style="width: 1.25em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.967em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.704em 1000em 2.724em -999.997em); top: -2.548em; left: 0.003em;"><span class="mrow" id="MathJax-Span-106"><span class="mi" id="MathJax-Span-107" style="font-family: MathJax_Math-italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.554em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.004em; vertical-align: -0.068em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-5">K</script></span>, followed by the happy prime
+    candidate, <span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-6-Frame"><nobr><span class="math" id="MathJax-Span-108" role="math" style="width: 1.137em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.93em 1000em 2.724em -999.997em); top: -2.548em; left: 0.003em;"><span class="mrow" id="MathJax-Span-109"><span class="mi" id="MathJax-Span-110" style="font-family: MathJax_Math-italic;">m</span></span><span style="display: inline-block; width: 0px; height: 2.554em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.718em; vertical-align: -0.068em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-6">m</script></span>,
+    (<span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-7-Frame"><nobr><span class="math" id="MathJax-Span-111" role="math" style="width: 8.506em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.749em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.93em 1000em 3.064em -999.997em); top: -2.775em; left: 0.003em;"><span class="mrow" id="MathJax-Span-112"><span class="mn" id="MathJax-Span-113" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-114" style="font-family: MathJax_Main; padding-left: 0.286em;">≤</span><span class="mi" id="MathJax-Span-115" style="font-family: MathJax_Math-italic; padding-left: 0.286em;">m</span><span class="mo" id="MathJax-Span-116" style="font-family: MathJax_Main; padding-left: 0.286em;">≤</span><span class="mn" id="MathJax-Span-117" style="font-family: MathJax_Main; padding-left: 0.286em;">10</span><span class="mspace" id="MathJax-Span-118" style="height: 0.003em; vertical-align: 0.003em; width: 0.173em; display: inline-block; overflow: hidden;"></span><span class="mn" id="MathJax-Span-119" style="font-family: MathJax_Main;">000</span></span><span style="display: inline-block; width: 0px; height: 2.781em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.146em; vertical-align: -0.211em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-7">1 \le m \le 10\,
+    000</script></span>).</p>
+
+    <h2>Output</h2>
+
+    <p>For each data set there is a single line of output. The
+    single output line consists of the data set number,
+    <span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-8-Frame"><nobr><span class="math" id="MathJax-Span-120" role="math" style="width: 1.25em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.967em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.704em 1000em 2.724em -999.997em); top: -2.548em; left: 0.003em;"><span class="mrow" id="MathJax-Span-121"><span class="mi" id="MathJax-Span-122" style="font-family: MathJax_Math-italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.06em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.554em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.004em; vertical-align: -0.068em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-8">K</script></span>, followed by a single
+    space followed by the candidate, <span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-9-Frame"><nobr><span class="math" id="MathJax-Span-123" role="math" style="width: 1.137em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.93em 1000em 2.724em -999.997em); top: -2.548em; left: 0.003em;"><span class="mrow" id="MathJax-Span-124"><span class="mi" id="MathJax-Span-125" style="font-family: MathJax_Math-italic;">m</span></span><span style="display: inline-block; width: 0px; height: 2.554em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.718em; vertical-align: -0.068em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-9">m</script></span>, followed by a single space,
+    followed by <tt class="ttfamily">YES</tt> or <tt class="ttfamily">NO</tt>, indicating whether <span class="tex2jax_process"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-10-Frame"><nobr><span class="math" id="MathJax-Span-126" role="math" style="width: 1.137em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.91em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.93em 1000em 2.724em -999.997em); top: -2.548em; left: 0.003em;"><span class="mrow" id="MathJax-Span-127"><span class="mi" id="MathJax-Span-128" style="font-family: MathJax_Math-italic;">m</span></span><span style="display: inline-block; width: 0px; height: 2.554em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.718em; vertical-align: -0.068em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-10">m</script></span> is a happy prime.</p>
+
+    <table class="sample" summary="sample data">
+      <tbody><tr>
+        <th>Sample Input 1</th>
+
+        <th>Sample Output 1</th>
+      </tr>
+
+      <tr>
+        <td>
+          <pre>4
+1 1
+2 7
+3 383
+4 1000
+</pre>
+        </td>
+
+        <td>
+          <pre>1 1 NO
+2 7 YES
+3 383 YES
+4 1000 NO
+</pre>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+
+    
+            <p class="problem-download">
+            <a href="https://open.kattis.com/download/sampledata?id=happyprime">Download</a> the sample data files
+        </p>
+    
+    
+    
+            <div class="source">
+            <p>
+                
+                                    Source: 2014 Greater New York Region ACM Regional Contest.
+                
+                License:
+                                                     For educational use only
+                                            </p>
+        </div>
+    
+    
+    
+</div>
+
+
+            </section>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-info col-md-10 ">
+                
+                            </div>
+            <div class="footer-powered col-md-2">
+                <h4>Powered by Kattis</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="./Happy Happy Prime Prime – Kattis, Kattis_files/modernizr.min.js"></script>
+<script src="./Happy Happy Prime Prime – Kattis, Kattis_files/bootstrap.min.js"></script>
+<script src="./Happy Happy Prime Prime – Kattis, Kattis_files/select2.min.js"></script>
+<script src="./Happy Happy Prime Prime – Kattis, Kattis_files/raphael-min.js"></script>
+<script src="./Happy Happy Prime Prime – Kattis, Kattis_files/plugins.js" type="text/javascript"></script>
+<script src="./Happy Happy Prime Prime – Kattis, Kattis_files/main.js" type="text/javascript"></script>
+<script>initSite();</script>
+
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Math-italic, sans-serif;"></div></div></body></html>
