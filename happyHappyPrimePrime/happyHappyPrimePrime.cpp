@@ -82,6 +82,6 @@ int main(int argc, char *argv[])
             if(yes) cout <<"YES\n";
             else cout << "NO\n";   
    }
-    system("PAUSE");
+    //system("PAUSE");
     return EXIT_SUCCESS;
 }
